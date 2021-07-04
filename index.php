@@ -36,7 +36,7 @@
         
         function getRestaurants(lat, lng) {
 
-            $("#rd").html("Finding Restraunts...");
+            $("#rd").html("Finding Restaurants...");
             
             $.get(`https://fewd-10244.herokuapp.com/api/api.php?lat=${lat}&long=${lng}`, restaurantsCallback);
         }
@@ -82,7 +82,7 @@
                 $rowClone.appendTo($containerRestaurants);
             })
 
-            $("#rd").html("Found These Restraunts...");
+            $("#rd").html("Found These Restaurants...");
             $('#Spinner').css('display','none');
         }
 
@@ -105,7 +105,7 @@
                 navigator.geolocation.getCurrentPosition(
                         //  Success
                         (position) => {
-                            // call get restraunt 
+                            // call get restaurant 
                             getRestaurants(position.coords.latitude,position.coords.longitude);
 
                             console.log(position);
